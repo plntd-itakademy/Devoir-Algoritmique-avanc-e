@@ -5,18 +5,19 @@
 // --------------------------
 
 // Function who is taking 2 parameters: the text to manipulate and the type of the operation (encrypt or decrypt)
-// It will returns the encrypted/decrypted text
-function encryptDecryptText($text, $type) {
+// Returns the encrypted/decrypted text
+function encryptDecryptText(string $text, string $type): string
+{
     $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $textArr = [];
     $textResult = '';
-    
+
     // Translate the text string into an array
-    for ($i=0; $i < strlen($text); $i++) {
+    for ($i = 0; $i < strlen($text); $i++) {
         $textArr[$i] = $text[$i];
     }
 
-    for ($i=0; $i < count($textArr); $i++) {
+    for ($i = 0; $i < count($textArr); $i++) {
         if ($textArr[$i] === ' ') { // If the character is a space, add one
             $textResult .= ' ';
         } else {
@@ -33,12 +34,21 @@ function encryptDecryptText($text, $type) {
 }
 
 // Function to get the index of a letter
-function getLetterIndex($letter) {
+// Returns the index or null if it is not a valid letter
+function getLetterIndex(string $letter): ?int
+{
     $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-    for ($i=0; $i < strlen($alphabet); $i++) {
-        if ($alphabet[$i] === $letter) { // If it matches the letter, return the index
+    for ($i = 0; $i < strlen($alphabet); $i++) {
+
+        // If it matches the letter, return the index
+        if ($alphabet[$i] === $letter) {
             return $i;
+        }
+
+        // Return null if the letter has not been found
+        if ($i === strlen($alphabet) - 1) {
+            return null;
         }
     }
 }

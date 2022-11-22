@@ -7,9 +7,11 @@
 // Get the lowest value of an array
 // The function returns a int or null if the given array is invalid
 // We need to loop into the array and check if the current number is lower than the saved one
+
 $numbers = [14, 8, 10, 26, 810];
 
-function getLowestValue(array $numbers): ?int {
+function getLowestValue(array $numbers): ?int
+{
     if (count($numbers) < 2) { // Exit the function if the array has less than 2 numbers (we need to compare at least 2 values)
         return null;
     }
@@ -21,11 +23,12 @@ function getLowestValue(array $numbers): ?int {
             $lowestValue = $numbers[$i];
         }
     }
-    
+
     return $lowestValue;
 }
 
-function getHigherValue(array $numbers): ?int {
+function getHigherValue(array $numbers): ?int
+{
     if (count($numbers) < 2) { // Exit the function if the array has less than 2 numbers (we need to compare at least 2 values)
         return null;
     }
@@ -37,7 +40,7 @@ function getHigherValue(array $numbers): ?int {
             $higherValue = $numbers[$i];
         }
     }
-    
+
     return $higherValue;
 }
 

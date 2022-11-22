@@ -10,7 +10,7 @@ $wordArr = [];
 $letterCount = 0;
 
 // For each letter of the word, we fill the word array
-for ($i=0; $i < strlen($word); $i++) { 
+for ($i = 0; $i < strlen($word); $i++) {
     $wordArr[$i] = $word[$i];
 }
 
@@ -18,7 +18,7 @@ for ($i=0; $i < strlen($word); $i++) {
 $letterSearched = readline("Veuillez entrer une lettre à rechercher : ");
 
 // For each letters of the word specified, we check if the letter searched is present. If so, we increment the counter
-for ($i=0; $i < count($wordArr); $i++) { 
+for ($i = 0; $i < count($wordArr); $i++) {
     if ($wordArr[$i] === $letterSearched) {
         $letterCount++;
     }

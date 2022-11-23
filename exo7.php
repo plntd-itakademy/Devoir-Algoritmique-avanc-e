@@ -12,10 +12,13 @@ function sortArray(array $numbers): array
 {
     $isMoved = true;
 
-    while ($isMoved) { // While the last loop has modified the array, we re-check if there is any numbers to change
+    // While the last loop has modified the array, we re-check if there is any numbers to change
+    while ($isMoved) {
         $isMoved = false;
         for ($i = 0; $i < count($numbers) - 1; $i++) {
-            if ($numbers[$i] > $numbers[$i + 1]) { // If the right number is greater than the left one, we swipe them
+
+            // If the right number is greater than the left one, we swipe them
+            if ($numbers[$i] > $numbers[$i + 1]) {
                 $tempLeftValue = $numbers[$i]; // We save the left value that we are going to swipe in a temp variable
                 $numbers[$i] = $numbers[$i + 1]; // We put the lower value to the left position
                 $numbers[$i + 1] = $tempLeftValue; // We put the greater value to the right position
